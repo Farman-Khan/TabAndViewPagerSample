@@ -8,11 +8,11 @@ import android.support.v4.app.FragmentStatePagerAdapter;
  * Created by Ashish on 9/5/2016.
  */
 public class MyPagerAdapter extends FragmentStatePagerAdapter {
-    int totalTabs;
+    int pages;
 
-    public MyPagerAdapter(FragmentManager fm, int totalTabs) {
+    public MyPagerAdapter(FragmentManager fm, int pages) {
         super(fm);
-        this.totalTabs = totalTabs;
+        this.pages = pages;
     }
 
     @Override
@@ -38,6 +38,24 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return totalTabs;
+        return pages;
     }
-}
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+
+        switch (position) {
+            case 0:
+                return "Scroll A";
+            case 1:
+                return "Scroll B";
+            case 2:
+                return "Scroll C";
+
+        }
+
+        return null;
+    }
+
+
+    }
